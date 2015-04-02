@@ -1,0 +1,11 @@
+﻿<p>Tässä yksi elokuva {{ctrl.tunnus}}. {{ctrl.movie|json}}</p>
+
+<dl>
+    <dt>{{TITLE}}</dt>
+    <dd>{{ctrl.movie.title}}</dd>
+    <dt>{{RELEASE_YEAR}}</dt>
+    <dd>{{ctrl.movie.releaseYear}}</dd>
+    <dt>{{STORYLINE}}</dt>
+    <dd>{{ctrl.movie.storyline}}</dd>
+</dl>
+<img ng-src="{{ctrl.movie.imageUrl}}" alt="{{ctrl.movie.title}}" />

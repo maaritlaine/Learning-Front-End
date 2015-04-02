@@ -1,0 +1,19 @@
+﻿<p>movies.html Fuck what: {{fuck.what}} </p>
+<p>Fuck what controle: {{control.fuck.what}} </p>
+<div>
+    <dl ng-repeat="movie in control.movies">
+        <dt>TITLE:</dt>
+        <dd><a ng-href="#/movie/{{movie.id}}">{{movie.title}}</a></dd> TODO: annotaatio nohin linkkeihin risuaidat mitä
+        <dt>RELEASE_YEAR:</dt>
+        <dd>{{movie.releaseYear}}</dd>
+        <dt>STORYLINE:</dt>
+        <dd>{{movie.storyline}}</dd>
+        <dt>GENRES:</dt>
+        <dd>{{movie.genres}}</dd>
+    </dl>
+    <p>LEFFAT PÄÄTTYY.</p>
+</div>
+<p ng-controller="ctrl">Se lataa näkymän mutta ei tajua olevansa angularia täällä. {{ctrl.movies | json }}</p>
+<p>Se lataa näkymän mutta ei tajua olevansa angularia täällä. {{ctrl.error | json }}</p>
+<p>Se lataa näkymän mutta ei tajua olevansa angularia täällä. {{ctrl | json }}</p>
+<p>Fuck what controle movies.html: {{control.fuck.what}} </p>

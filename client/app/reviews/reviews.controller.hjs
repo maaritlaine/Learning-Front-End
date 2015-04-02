@@ -1,0 +1,47 @@
+﻿// Reviews by movieId: /api/v1/movies/:id/reviews
+// Ratings by movieId: /api/v1/movies/:id/ratings
+(function () {
+
+	angular.module('NMDB')
+		.controller('reviewsCtrl', reviews);
+
+	reviews.$inject = ['$routeParams', 'reviewService'];
+
+	function reviews($routeParams, reviewService) {
+
+		var controller = this;
+
+		activate();
+
+		function activate() {
+
+			var movieId = $routeParams.id;
+
+			reviewService.getReviews(movieId)
+			.then(function (data) {
+				controller.data = data;
+			})
+			.catch(function (error) {
+				controller.data = error;
+			});
+
+			//reviewService.getReviewsToo(movieId)
+			//.then(function (data) {
+			//	controller.otherdata = data;
+			//})
+			//.catch(function (error) {
+			//	controller.otherdata = error;
+			//});
+
+		}
+
+		
+	}
+
+
+})();
+
+
+
+
+	

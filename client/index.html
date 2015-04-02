@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+
+<html ng-app="NMDb">
+<!-- HML NOTES
+    ng-app direcive (?) tells that this is an angular application.
+    Without it none of the bindings would be treated as such and would appear on the page as typed,
+    eg. {{helloMessage}} instead of the bound version Hello, World!
+    -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>NMDb</title>
+
+    <!-- Gulp injects references to CSS files here
+         Note that inject:css and endinject must be separately commented. -->
+    <!-- inject:css -->
+    <!-- endinject -->
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Plan:
+            Language choice: English | Svenska | Suomi
+            Register/Sign in and out upper right corner
+            Nortal movie db logo, title + subtitle  -->
+    </header>
+
+    <!--
+        ng-view is the spot where the code from different templates (e.g movie.html and movies.html)
+        is inserted into. Which content (template) is shown in the view depends on how the user navigates
+        (which routes they choose) and how these routes are linked to templates and controllers in the app.routes.js file.
+
+        Note that in order to routing to work, you will have to
+        - have the angular-route.js library referenced (cf. <script src="" in index.html)
+        - have the ngRoute module imported in you main application module (e.g. app.module.js)
+        and .
+
+
+        Also this would be legal: <div ng-view></div>
+    -->
+
+
+    <div ng-view></div>
+    <ng-view></ng-view>
+
+
+    <section id="error"> <!--Plan: General error message bar. --></section>
+
+    <section id="register">
+        <!--Plan: Register a new user. -->
+        <ng-form></ng-form>
+
+    </section>
+
+    <!-- ng-controller value tells which controller is in charge of creating a scope and
+        thus passing data and functionality for this piece of the view.
+        ng-repeat repeats items in a list. You can sort and filter.
+        moviesController must give the view an access to variable called movies .-->
+    <!--
+
+        Plan:
+
+        Paging
+        Filtering options
+        Each movie: Image, title, release year, average rating (images of stars)
+        Filtering options?
+        Paging
+
+        Miten sais ton errorin silleen, että kaikki errorit nousee pintaan ja näkyy
+        käyttäjälle yhdessä kohdassa riippumatta siitä mikä kontrolli siihen törmäs.
+        Ja miten errorista saa ulos muuta ku tietotyypin?
+        -->
+    <!--
+    TODO: make this into angular template like in the MRH example.
+    TODO: add translation.
+    TODO: format the genre list.
+    -->
+    <!-- Gulp injects references to JS files here
+         Note that inject:js and endinject must be separately commented. -->
+    <!-- inject:js -->
+    <!-- endinject -->
+    <footer>
+        <!-- Plan: Copyright information -->
+    </footer>
+</body>
+
+</html>

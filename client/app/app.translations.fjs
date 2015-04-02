@@ -1,0 +1,25 @@
+﻿//(function () {
+//    'use strict';
+
+//    angular
+//        .module('app')
+//        .config(configure);
+
+//    configure.$inject = ['$translateProvider']; 
+
+//    function configure($translateProvider) {
+
+//        // Plan: Move translations of different languages in separate files.
+
+//        $translateProvider.translations('en', {
+//            TITLE: 'Title'
+
+//        });
+
+//        $translateProvider.translations('fi', {
+//            TITLE: 'Nimi'
+
+//        });
+
+//    }
+//})();

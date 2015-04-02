@@ -1,0 +1,34 @@
+﻿
+//TODO: make this into function
+// Creating a controller in the NMDb application declared in the main module.
+// The contoroller is bound to the html template by using ng-controller directive.
+// The controller is responsible for creating the $scope then used to present data in the view.
+// The $scope is passed empty into the controller which passes it back filled with all the cool things for the view.
+
+
+
+
+
+
+
+//(function () {
+//    'use strict';
+
+//    angular
+//        .module('app')
+//        .controller('shell', shell);
+
+//    shell.$inject = ['$location']; 
+
+//    // Tänne tulis niinku yhteiset jutut shellController
+
+//    function shell($location) {
+//        /* jshint validthis:true */
+//        var vm = this;
+//        vm.title = 'shell';
+
+//        activate();
+
+//        function activate() { }
+//    }
+//})();
