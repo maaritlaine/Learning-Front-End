@@ -9,9 +9,8 @@
 
    function reviewService($http) {
 
-      var apiBaseAddress = 'https://nmdb.azurewebsites.net'; //TODO: configuration file
+      var apiBaseAddress = 'https://nmdb.azurewebsites.net'; 
 
-        // Palvelun julkiset metodit palautetaan kutsujalle
         var service = {
             getReviews: getReviews,
             getReview: getReview
@@ -41,5 +40,6 @@
 
     }
 })();
+
 // Reviews by movieId: /api/v1/movies/:id/reviews
 // Ratings by movieId: /api/v1/movies/:id/ratings

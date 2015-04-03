@@ -33,37 +33,6 @@
 }
 )();
 
-
-//(function () {
-
-//    angular.module('NMDb')
-//        .controller('reviewCtrl', 'review');
-    
-//    review.$inject = ['$routeParams'];
-
-//    function review($routeParams) {
-
-//        var reviewId = $routeParams.id;
-
-//        var ctrl = this;
-
-//        activate();
-
-//        function activate() {
-
-//            ctrl.fuck = {
-//                what: 'this review.html shit: ' + reviewId,
-//                when: 'now'
-//            };
-//            return ctrl;
-
-//        }
-        
-
-//    }
-
-//})();
-
 // Review by id: /api/v1/reviews/:id
 
 // $routeParams contain the parameters provided in the route. 

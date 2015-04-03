@@ -3,7 +3,7 @@
 
     angular
         .module('NMDb')
-        .factory('movieService', movieService); //TODO: why factory, other possibilities, see code school
+        .factory('movieService', movieService); //TODO: why factory, other possibilities?
 
     movieService.$inject = ['$http'];
 
@@ -33,3 +33,8 @@
     	}
     }
 })();
+
+// Services are for business logic. Call your back-end from here.
+// Create your service with the factory method or use ????
+// Inject all the parameters your functions are going to need into the service.
+// Expose your functions in an array.

@@ -1,5 +1,20 @@
-﻿<p>movies.html Fuck what: {{fuck.what}} </p>
-<p>Fuck what controle: {{control.fuck.what}} </p>
+﻿<!--
+    ng-controller value tells which controller is in charge of creating a scope and
+    thus passing data and functionality for tje piece of the view in encompasses.
+        e.g <div ng-controller="moviesCtrl">
+
+    Here we do not need a ng-controller directive, because we have linked this template
+    together with the moviesCtrl in the app.route.js file. We can access the relevant 
+    controller through the alias defined in that route.
+
+    moviesCtrl alias control has a variable called movies. Content of that variable is a responsibility
+    of the controller and it uses movieService to fill it up with relevant data.
+
+    ng-repeat repeats items in a list. You can sort, filter etc.:
+    movie in control.movies | filter:searchText | orderBy:order
+-->
+
+<h1>MOVIES.HTML</h1>
 <div>
     <dl ng-repeat="movie in control.movies">
         <dt>TITLE:</dt>
@@ -11,9 +26,4 @@
         <dt>GENRES:</dt>
         <dd>{{movie.genres}}</dd>
     </dl>
-    <p>LEFFAT PÄÄTTYY.</p>
 </div>
-<p ng-controller="ctrl">Se lataa näkymän mutta ei tajua olevansa angularia täällä. {{ctrl.movies | json }}</p>
-<p>Se lataa näkymän mutta ei tajua olevansa angularia täällä. {{ctrl.error | json }}</p>
-<p>Se lataa näkymän mutta ei tajua olevansa angularia täällä. {{ctrl | json }}</p>
-<p>Fuck what controle movies.html: {{control.fuck.what}} </p>

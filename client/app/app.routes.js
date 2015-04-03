@@ -3,7 +3,7 @@
 
     angular
         .module('NMDb')
-        .config(route); // Instead of configuring routes here, refer to a function. Much neater this way.
+        .config(route); // Instead of configuring routes inline, refer to a function. Much neater this way.
 
     route.$inject = ['$routeProvider']; 
 
@@ -36,13 +36,8 @@
 
 })();
 
-   
-
 // You can learn about routes in:
 // CodeSchool.org: Staying Sharp with Angular, level 1
 
-// Plan: 
-// - Movies list
-// - A movie
-// - Registration form
-
+// Routes are for linking user navigation to the template that presents the correct view state to the user
+// and the controller that provideds the content for the view.
