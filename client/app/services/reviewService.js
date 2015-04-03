@@ -5,19 +5,16 @@
         .module('NMDb')
         .service('reviewService', reviewService);
 
-    reviewService.$inject = ['$http'];
+   reviewService.$inject = ['$http']; 
 
-    function reviewService($http) {
+   function reviewService($http) {
 
-        var apiBaseAddress = 'https://nmdb.azurewebsites.net'; //TODO: configuration file
+      var apiBaseAddress = 'https://nmdb.azurewebsites.net'; //TODO: configuration file
 
         // Palvelun julkiset metodit palautetaan kutsujalle
-        var service =
-            {
+        var service = {
                 getReviews: getReviews
-                //getReviewsToo: getReviewsToo
-               // getReview: getReview
-            };
+        };
 
         return service;
 
@@ -27,10 +24,27 @@
         // response of the result.
         function getReviews(movieId) {
 
-            $http.get(apiBaseAddress + '/api/v1/movies/' + movieId + '/reviews')
-            .then(function (result) {
-                return result.data;
-            });
+
+            //TODO: ACTUALLY GET REVIEWS
+
+            //if (movieId === null)
+            //    return error;
+
+            //return $http.get(apiBaseAddress + '/api/v1/movies')
+            //     .then(function (result) {
+            //         return result.data;
+            //     });
+
+            return $http.get(apiBaseAddress + '/api/v1/movies/' + movieId + '/reviews')
+                 .then(function (result) {
+                     return result.data;
+                 });
+
+            
+            //$http.get(apiBaseAddress + '/api/v1/movies/' + movieId + '/reviews')
+            //.then(function (result) {
+            //    return result.data;
+            //});
         }
 
         //function getReviewsToo(movieId) {
