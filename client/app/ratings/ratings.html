@@ -1,0 +1,13 @@
+﻿<h1>RATINGS.HTML</h1>
+<div>
+    <p>All the ratings:{{control.ratings.all}}</p>
+    <p>Average rating: {{control.ratings.avg}}</p>
+</div>
+<div>
+    <dl ng-repeat="rating in control.ratings.all">
+        <dt>VALUE:</dt>
+        <dd><a ng-href="#/rating/{{rating.id}}">{{rating.id}}</a></dd>
+        <dt>USER:</dt>
+        <dd>{{rating.user}}</dd>
+    </dl>
+</div>
