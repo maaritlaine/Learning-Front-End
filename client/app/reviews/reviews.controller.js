@@ -2,14 +2,14 @@
 // Ratings by movieId: /api/v1/movies/:id/ratings
 (function () {
 
-	angular.module('NMDB')
+	angular.module('NMDb')
 		.controller('reviewsCtrl', reviews);
 
 	reviews.$inject = ['$routeParams', 'reviewService'];
 
 	function reviews($routeParams, reviewService) {
 
-		var controller = this;
+		var ctrl = this;
 
 		activate();
 
@@ -19,10 +19,10 @@
 
 			reviewService.getReviews(movieId)
 			.then(function (data) {
-				controller.data = data;
+			    ctrl.reviews = data;
 			})
 			.catch(function (error) {
-				controller.data = error;
+			    ctrl.error = error;
 			});
 
 			//reviewService.getReviewsToo(movieId)

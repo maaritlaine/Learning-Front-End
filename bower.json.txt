@@ -1,0 +1,9 @@
+// BOWER is a java script package manager. Just like NPM.
+// Bower is used for managing the client side packages (i.e. packages needed at runtime that help the application work).
+// NPM is used for managing packages needed during the development.
+// The file includes suff related to packaged and packaging processes handled by BOWER.
+// The dependencies secion includes all the third party client packages installed with bower.
+// If you run the command bower update, it updates all the packages included in this file.
+
+
+You can't have comments in json files.

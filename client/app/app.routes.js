@@ -23,6 +23,10 @@
         .when('/movie/:id', {
             templateUrl: 'templates/movies/movie.html',
             controller: 'movieCtrl as control'
+        })
+        .when('/movie/:id/reviews', {
+            templateUrl: 'templates/reviews/reviews.html',
+            controller: 'reviewsCtrl as control'
         });
     }
 

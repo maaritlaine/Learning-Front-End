@@ -1,0 +1,5 @@
+
+// NPM is a java script package manager. Just like BOWER.
+// NPM is used for managing packages needed during the development. 
+// Bower is used for managing the client side packages (i.e. packages needed at runtime that help the application work).
+// This file lists the packages installed with NPM. If you run the command npm update, it updates all the packages included in this file.
