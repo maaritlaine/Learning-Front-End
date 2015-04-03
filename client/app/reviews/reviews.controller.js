@@ -3,9 +3,9 @@
 	angular.module('NMDb')
 		.controller('reviewsCtrl', reviews);
 
-	reviews.$inject = ['$routeParams', 'reviewService', 'movieService'];
+	reviews.$inject = ['$routeParams', 'reviewService'];
 
-	function reviews($routeParams, reviewService, movieService) {
+	function reviews($routeParams, reviewService) {
 
 		var ctrl = this;
 

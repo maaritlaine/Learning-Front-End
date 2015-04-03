@@ -27,7 +27,11 @@
         .when('/movie/:id/reviews', {
             templateUrl: 'templates/reviews/reviews.html',
             controller: 'reviewsCtrl as control'
-        });
+        })
+         .when('/review/:id', {
+             templateUrl: 'templates/reviews/review.html',
+             controller: 'reviewCtrl as control'
+         });
     }
 
 })();

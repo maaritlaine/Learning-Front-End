@@ -1,9 +1,12 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>{{vm.title}}</title>
-</head>
-<body>
-
-</body>
-</html>
+﻿<p>Tässä yksi arvostelu {{control.id}}. {{control.review|json}}</p>
+<p>review.html fuck: {{control.fuck.what}} </p>
+<dl>
+    <dt>{{TITLE}}</dt>
+    <dd>{{control.review.title}}</dd>
+    <dt>{{REVIEW_TEXT}}</dt>
+    <dd>{{control.review.reviewText}}</dd>
+    <dt>{{REVIEW_DATE}}</dt>
+    <dd>{{control.review.reviewDate}}</dd>
+</dl>
+<p>review.html Fuck what: {{fuck.what}} </p>
+<p>Fuck what controle: {{control.fuck.what}} </p>

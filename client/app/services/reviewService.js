@@ -13,7 +13,8 @@
 
         // Palvelun julkiset metodit palautetaan kutsujalle
         var service = {
-                getReviews: getReviews
+            getReviews: getReviews,
+            getReview: getReview
         };
 
         return service;
@@ -24,45 +25,19 @@
         // response of the result.
         function getReviews(movieId) {
 
-
-            //TODO: ACTUALLY GET REVIEWS
-
-            //if (movieId === null)
-            //    return error;
-
-            //return $http.get(apiBaseAddress + '/api/v1/movies')
-            //     .then(function (result) {
-            //         return result.data;
-            //     });
-
             return $http.get(apiBaseAddress + '/api/v1/movies/' + movieId + '/reviews')
                  .then(function (result) {
                      return result.data;
                  });
-
-            
-            //$http.get(apiBaseAddress + '/api/v1/movies/' + movieId + '/reviews')
-            //.then(function (result) {
-            //    return result.data;
-            //});
         }
 
-        //function getReviewsToo(movieId) {
+        function getReview(reviewId) {
 
-        //    $http.get(apiBaseAddress + '/api/v1/movies/' + movieId + '/reviews')
-        //    .success(function (data) {
-        //        return data;
-        //    })
-        //    .error(function (error) {
-        //        return error;
-        //    });
-        //}
-
-        //function getReview(reviewId) {
-        //    $http.get(apiBaseAddress + '/api/v1/reviews/' + reviewId)
-        //    .then()
-        //    .error();
-        //}
+            return $http.get(apiBaseAddress + '/api/v1/reviews/' + reviewId)
+            .then(function (result) {
+                return result.data;
+            });
+        }
 
     }
 })();
