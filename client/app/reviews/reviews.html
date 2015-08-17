@@ -1,13 +1,3 @@
-﻿<h1>REVIEWS.HTML</h1>
-<div>
-    <dl ng-repeat="review in control.reviews">
-        <dt>TITLE:</dt>
-        <dd><a ng-href="#/review/{{review.id}}">{{review.title}}</a></dd>
-        <dt>REVIEW_TEXT:</dt>
-        <dd>{{review.reviewText}}</dd>
-        <dt>USER:</dt>
-        <dd>{{review.user}}</dd>
-        <dt>REVIEW_DATE:</dt>
-        <dd>{{review.reviewDate}}</dd>
-    </dl>
+﻿<div ng-controller="reviewsCtrl as control" ng-repeat="review in control.reviews">
+    <review review="review"></review>
 </div>

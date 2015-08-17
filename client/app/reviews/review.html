@@ -1,9 +1,20 @@
-﻿<h1>REVIEW.HTML</h1>
-<dl>
-    <dt>{{TITLE}}</dt>
-    <dd>{{control.review.title}}</dd>
-    <dt>{{REVIEW_TEXT}}</dt>
-    <dd>{{control.review.reviewText}}</dd>
-    <dt>{{REVIEW_DATE}}</dt>
-    <dd>{{control.review.reviewDate}}</dd>
-</dl>
+﻿<div class="well">
+    <div class="row">
+        <div class="col-md-9">
+            <a ng-href="#/review/{{review.id}}"><h4>{{review.title | uppercase}}</h4></a>
+        </div>
+        <div class="col-md-1 col-md-offset-2">
+            <rating reviewId="10"></rating>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h6>- {{review.user}}, {{review.reviewDate | date: 'fullDate' }}</h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            {{review.reviewText}}
+        </div>
+    </div>
+</div>

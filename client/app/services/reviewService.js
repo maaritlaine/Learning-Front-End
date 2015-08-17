@@ -13,7 +13,11 @@
 
         var service = {
             getReviews: getReviews,
-            getReview: getReview
+            getUserReviews: getUserReviews,
+            getReview: getReview,
+            addReview: addReview,
+            updateReview: updateReview,
+            deleteReview: deleteReview
         };
 
         return service;
@@ -30,9 +34,42 @@
                  });
         }
 
+        function getUserReviews(movieId) {
+
+            // TODO: Use token
+            return $http.get(apiBaseAddress + '/api/v1/movies/' + movieId + '/reviews')
+                 .then(function (result) {
+                     return result.data;
+                 });
+        }
+
         function getReview(reviewId) {
 
             return $http.get(apiBaseAddress + '/api/v1/reviews/' + reviewId)
+            .then(function (result) {
+                return result.data;
+            });
+        }
+
+       // TODO: token, content
+        function addReview() {
+            return $http.post(apiBaseAddress + '/api/v1/reviews/')
+            .then(function (result) {
+                return result.data;
+            });
+        }
+
+       // TODO: token, content
+        function updateReview(reviewId) {
+            return $http.post(apiBaseAddress + '/api/v1/reviews/' + reviewId)
+            .then(function (result) {
+                return result.data;
+            });
+        }
+
+       // TODO: token, content
+        function deleteReview(reviewId) {
+            return $http.post(apiBaseAddress + '/api/v1/reviews/' + reviewId)
             .then(function (result) {
                 return result.data;
             });

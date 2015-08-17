@@ -22,7 +22,7 @@ var config = require('./gulp.config.js')();
 // Note that because inject task requires other tasks to be run before it executes, also
 // those tasks end up included in the build tasks.
 gulp.task('build', function(done){
-    runSequence('clean', 'copy-fonts', 'copy-templates', 'inject', done);
+    runSequence('clean', 'copy-fonts', 'copy-templates', 'copy-images', 'inject', done);
 });
 
 
@@ -142,10 +142,17 @@ gulp.task('copy-fonts', function () {
 });
 
 // C O P Y   T E M P L A T E S
-// Simple copying of the angular template files (html) into build folder.
+// Simple copying of the angular template files (html) into the build folder.
 gulp.task('copy-templates', function () {
     return gulp.src(config.templates.src)
         .pipe(gulp.dest(config.templates.dest));
+});
+
+// C O P Y   I M A G E S
+// Simple copying of images into the build folder.
+gulp.task('copy-images', function () {
+    return gulp.src(config.images.src)
+        .pipe(gulp.dest(config.images.dest));
 });
 
 

@@ -59,7 +59,8 @@ module.exports = function () {
             src: {
                 lib: [
                  './bower_components/bootstrap/dist/css/bootstrap.css',
-                 './bower_components/fontawesome/css/font-awesome.css'
+                 './bower_components/fontawesome/css/font-awesome.css',
+                 './client/content/grayscale.css'
                 ],
                 app: [
                  './client/content/app.scss'
@@ -102,9 +103,13 @@ module.exports = function () {
         templates: {
             src: './client/app/**/*.html',
             dest: './build/templates'
-        }
+        },
 
-      
+        // IMAGES = location of images used in UI.
+        images: {
+        src: './client/content/**/*.jpg',
+        dest: './build/images'
+        }
 
    }
 

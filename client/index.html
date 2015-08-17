@@ -2,13 +2,32 @@
 
 
 <html ng-app="NMDb">
-<!-- 
+
+<!--
     ng-app direcive makes this an angular application.
-    Without it none of the bindings would be treated as such and would appear on the page as typed,
+    Without it none of the bound expressions would be treated as such and would appear on the page as typed,
     eg. {{helloMessage}} instead of the bound version Hello, World!
     If you see your bindings unbound even though you have this directive in place, you probably
     have a mistake somewhere in your code and/or lack proper error handling.
+
+    If you need to show an expression as such an not bind it inside an angular application, mark it with
+    ngNonBindable directive.
+
+    Directives manipulate the view. They mark locations for content, specify style for it and watch for user input.
+    You can write a directive in four different ways:
+
+    <ng-form></ng-form>
+    <div ng-form></div>
+    <div class='ng-form'></div>
+    //TODO: mikä se neljäs tapa olikaan
+   
+    There are directives for event handling (mouse event, input changes), for binding text and html,
+    for hiding and showing element, for applying style etc.
+    ngClick, ngHide/ngShow, ngCloak, ngForm, ngClassEven/ngClassOdd, ngHref, ngSrc, ngRepeat...
+
+    You can also write your own custom-direcives.
 -->
+<!-- -->
 
 <head>
     <meta charset="utf-8" />
@@ -58,7 +77,6 @@
 
         Also this would be legal: <div ng-view></div>
     -->
-
     <!--
         Plan
         ITERATION 1 c

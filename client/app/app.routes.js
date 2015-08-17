@@ -29,7 +29,7 @@
             controller: 'reviewsCtrl as control'
         })
          .when('/review/:id', {
-             templateUrl: 'templates/reviews/review.html',
+             templateUrl: 'templates/reviews/reviewbase.html',
              controller: 'reviewCtrl as control'
          })
          .when('/movie/:id/ratings', {
@@ -39,7 +39,28 @@
         .when('/rating/:id', {
             templateUrl: 'templates/ratings/rating.html',
             controller: 'ratingCtrl as control'
-        }); 
+        })
+        .when('/movies/new', {
+            templateUrl: 'templates/movies/movie-form.html',
+            controller: 'movieCtrl as control'
+        })
+        .when('/users/new', {
+            templateUrl: 'templates/users/user-form.html',
+            controller: 'userCtrl as control'
+        })
+        .when('/movie/:id/reviews/new', {
+            templateUrl: 'templates/reviews/review-form.html',
+            controller: 'reviewCtrl as control'
+        })
+        .when('/user/:id/reviews/', {
+            templateUrl: 'templates/reviews/reviews.html',
+            controller: 'reviewCtrl as control'
+        })
+        .when('/user/:id/ratingss/', {
+            templateUrl: 'templates/ratings/ratings.html',
+            controller: 'ratingCtrl as control'
+        })
+        ;
     }
 
 })();

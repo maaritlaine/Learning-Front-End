@@ -13,7 +13,11 @@
 
     	var service = {
     		getMovies: getMovies,
-    		getMovie: getMovie
+    		getMovie: getMovie,
+    		addMovie: addMovie,
+    		updateMovie: updateMovie,
+    		deleteMovie: deleteMovie
+                
     	};
 
     	return service;
@@ -31,6 +35,32 @@
                 	return result.data;
                 });
     	}
+
+        // TODO: token, content
+    	function addMovie() {
+    	    return $http.post(apiBaseAddress + '/api/v1/movies/')
+            .then(function (result) {
+                return result.data;
+            });
+    	}
+
+        // TODO: token, content, put
+    	function updateMovie(movieId) {
+    	    return $http.post(apiBaseAddress + '/api/v1/movies/' + movieId)
+            .then(function (result) {
+                return result.data;
+            });
+    	}
+
+        // TODO: token, content
+    	function deleteMovie(movieId) {
+    	    return $http.post(apiBaseAddress + '/api/v1/movies/' + movieId)
+            .then(function (result) {
+                return result.data;
+            });
+    	}
+
+
     }
 })();
 

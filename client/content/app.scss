@@ -1,9 +1,12 @@
 ﻿@import 'colors.scss';
 
-
 body {
-         background-color: $bg-color;
-         color: $color; 
+    background-color: $bg-color;
+    color: $color;
+    padding: 16px;
 }
 
-
+.app-release-year-col {
+    width: 150px;
+    min-width: 150px;
+}

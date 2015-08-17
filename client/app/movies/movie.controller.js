@@ -16,6 +16,9 @@
         var crtl = this;
         activate(); 
 
+
+        /* TODO: Calculate and return average rating. */
+
         function activate() {
 
             var movieId = $routeParams.id;

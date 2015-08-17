@@ -15,11 +15,6 @@
 
         var reviewId = $routeParams.id;
 
-        ctrl.fuck = {
-            what: 'this shit r: ' + reviewId,
-            when: 'now'
-        };
-
         reviewService.getReview(reviewId)
                .then(function (data) {
                    ctrl.review = data;
