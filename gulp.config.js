@@ -38,7 +38,8 @@ module.exports = function () {
                 lib: [
                 './bower_components/angular/angular.js',
                 './bower_components/angular-route/angular-route.js',
-                './bower_components/angular-translate/angular-translate.js'
+                './bower_components/angular-translate/angular-translate.js',
+                './bower_components/angular-cookies/angular-cookies.js'
                 ],
                 app: [
                 './client/app/*.js', // MRH: Miks vaan module? Olikse vaan ohimenevä tilanne. Muutin tän.

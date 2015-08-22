@@ -5,11 +5,16 @@
         .module('NMDb')
         .controller('moviesCtrl', movies);
 
-    movies.$inject = ['movieService'];
+    movies.$inject = ['movieService', '$window'];
 
-    function movies(movieService) {
+    function movies(movieService, $window) {
         /* jshint validthis:true */
         var ctrl = this;
+
+        ctrl.addMovie = function ()
+        { 
+            $window.location.href = $window.location.href + 'addmovie';
+        };
 
         activate();
 
@@ -24,5 +29,10 @@
                 });
        
         }
+
     }
+
+
+   
+
 })();

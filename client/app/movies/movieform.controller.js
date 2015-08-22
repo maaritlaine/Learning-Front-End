@@ -4,34 +4,27 @@
 
     angular
         .module('NMDb')
-        .controller('movieCtrl', movie);
+        .controller('movieformCtrl', movieform);
 
-    movie.$inject = ['$routeParams', 'movieService'];
+    movieform.$inject = ['$routeParams', 'movieService'];
     // $routeParams is for routing contains all the parameters from the URL (cf. movieId).
     // Consult the API reference for parameters available.
 
-    function movie($routeParams, movieService) {
-
-        /* jshint validthis:true */
-        var ctrl = this;
-        ctrl.submit = submit;
+    function movieform($routeParams, movieService) {
 
         // title
         // releaseYear
         // storyline
         // genres
 
-        activate(); 
 
-        /* TODO: Calculate and return average rating. */
+        /* jshint validthis:true */
+        var ctrl = this;
 
-        function activate() {
+        ctrl.addMovie = function () {
+            console.log('Add movie! Call service! ' + ctrl.title);
 
-            var movieId = $routeParams.id;
-
-            // Data is returned by the getMovies-function and then passed on to handling.
-            // .then handles the returned data, .catch catches an error.
-            movieService.getMovie(movieId)
+            movieService.addMovie(ctrl)
             .then(function (data) {
                 ctrl.movie = data;
             })
@@ -40,13 +33,10 @@
                 //console.log(error); // TODO: what is this console that it is logging into??
                 //alert('Error, sorry!');
             });
-
-        }
+        };
+        
     }
 
-    function submit() {
-        console.log('Submit movie.');
-    }
 
 })();
 

@@ -67,7 +67,7 @@ gulp.task('vet', function () {
 gulp.task('process-lib-js', function () {
     return gulp.src(config.js.src.lib)
         .pipe(concat(config.js.concat.lib))
-        .pipe(uglify())
+       // .pipe(uglify())
         .pipe(rev())
         .pipe(gulp.dest(config.js.dest));
 });
@@ -75,7 +75,7 @@ gulp.task('process-lib-js', function () {
 gulp.task('process-app-js', function () {
     return gulp.src(config.js.src.app)
         .pipe(concat(config.js.concat.app))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(rev())
         .pipe(gulp.dest(config.js.dest));
 });

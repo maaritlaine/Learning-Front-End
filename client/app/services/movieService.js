@@ -5,9 +5,9 @@
         .module('NMDb')
         .factory('movieService', movieService); //TODO: why factory, other possibilities?
 
-    movieService.$inject = ['$http'];
+    movieService.$inject = ['$http', 'loginService'];
 
-    function movieService($http) {
+    function movieService($http, loginService) {
 
     	var apiBaseAddress = 'https://nmdb.azurewebsites.net'; //TODO: configuration file
 
@@ -23,6 +23,7 @@
     	return service;
 
     	function getMovies() {
+
     		return $http.get(apiBaseAddress + '/api/v1/movies')
                 .then(function (result) {
                 	return result.data;
@@ -37,24 +38,33 @@
     	}
 
         // TODO: token, content
-    	function addMovie() {
-    	    return $http.post(apiBaseAddress + '/api/v1/movies/')
-            .then(function (result) {
-                return result.data;
-            });
-    	}
+    	function addMovie(movie) {
 
-        // TODO: token, content, put
-    	function updateMovie(movieId) {
-    	    return $http.post(apiBaseAddress + '/api/v1/movies/' + movieId)
+    	    var headers = loginService.getTokenHeader();
+
+    	    return $http.post(apiBaseAddress + '/api/v1/movies/', movie, headers)
             .then(function (result) {
                 return result.data;
             });
     	}
 
         // TODO: token, content
-    	function deleteMovie(movieId) {
-    	    return $http.post(apiBaseAddress + '/api/v1/movies/' + movieId)
+    	function updateMovie(movie) {
+
+    	    var headers = loginService.getTokenHeader();
+
+    	    return $http.put(apiBaseAddress + '/api/v1/movies/' + movie.id, movie, headers)
+            .then(function (result) {
+                return result.data;
+            });
+    	}
+
+        // TODO: token, content
+    	function deleteMovie(movie) {
+
+    	    var headers = loginService.getTokenHeader();
+    	    
+    	    return $http.delete(apiBaseAddress + '/api/v1/movies/' + movie.id, movie, headers)
             .then(function (result) {
                 return result.data;
             });

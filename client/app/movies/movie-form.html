@@ -1,9 +1,7 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+﻿<form name="movieForm" ng-controller="movieformCtrl as movie">
+    <input ng-model="movie.title"/>
+    <input ng-model="movie.releaseYear" />
+    <input ng-model="movie.storyline" />
+    <input ng-model="movie.genres" />
+    <button class="btn btn-success" ng-click="movie.addMovie();">Add movie now!</button>
+</form>

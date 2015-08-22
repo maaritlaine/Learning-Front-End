@@ -20,6 +20,10 @@
             templateUrl: 'templates/movies/movies.html',
             controller: 'moviesCtrl as control'
         })
+        .when('/addmovie', {
+                templateUrl: 'templates/movies/movie-form.html',
+                controller: 'moviesCtrl as control'
+        })
         .when('/movie/:id', {
             templateUrl: 'templates/movies/movie.html',
             controller: 'movieCtrl as control'
@@ -28,11 +32,19 @@
             templateUrl: 'templates/reviews/reviews.html',
             controller: 'reviewsCtrl as control'
         })
+        .when('/movie/:id/reviews/addreview', {
+            templateUrl: 'templates/reviews/review-form.html',
+                controller: 'reviewsCtrl as control'
+        })
          .when('/review/:id', {
              templateUrl: 'templates/reviews/reviewbase.html',
              controller: 'reviewCtrl as control'
          })
-         .when('/movie/:id/ratings', {
+        .when('/review/:id/editreview', {
+            templateUrl: 'templates/reviews/review-form.html',
+            controller: 'reviewCtrl as control'
+        })
+        .when('/movie/:id/ratings', {
              templateUrl: 'templates/ratings/ratings.html',
              controller: 'ratingsCtrl as control'
          })

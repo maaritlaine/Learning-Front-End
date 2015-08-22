@@ -2,7 +2,7 @@
     'use strict';
     angular.module('NMDb', [
         // Angular modules
-        'ngRoute']);
+        'ngRoute', 'pascalprecht.translate', 'ngCookies']);
 })();
 
 // This is the main module. This is the starting point of an angular application. 

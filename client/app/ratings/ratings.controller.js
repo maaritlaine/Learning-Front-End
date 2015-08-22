@@ -26,7 +26,7 @@
             })
             .catch(function (error){
                 console.log(error);
-                alert('Epic fail.');
+                alert('Epic fail 2.');
             });
 
         }

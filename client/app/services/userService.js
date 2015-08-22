@@ -29,6 +29,14 @@
                  });
         }
 
+        function getToken() {
+
+            return $http.get(apiBaseAddress + '/api/account/register')
+                 .then(function (result) {
+                     return result.data;
+                 });
+        }
+
     }
 })();
 

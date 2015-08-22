@@ -26,9 +26,21 @@
                 });
         }
 
-        //TODO: use token, parameters, put
+        //$http({ method: "POST", url: '/llamas.json', data: newLlamaRecruit });
+
+        //$httpProvider.interceptors.push(function ($q, $cookies) {
+        //    return {
+        //        'request': function (config) {
+
+        //            config.headers['Token'] = $cookies.loginTokenCookie;
+        //            return config;
+        //        }
+        //    };
+        //});
+
+        //TODO: use token, error handling
         function addGenre(genreName) {
-            return $http.get(apiBaseAddress + '/api/v1/genres/' + genreName)
+            return $http.post(apiBaseAddress + '/api/v1/genres/' + genreName)
                 .then(function (result) {
                     return result.data;
                 });

@@ -45,7 +45,7 @@
             });
         }
 
-        // TODO: token, content, put
+        // TODO: token, content
         function addRating() {
             return $http.post(apiBaseAddress + '/api/v1/ratings/')
             .then(function (result) {
@@ -53,9 +53,9 @@
             });
         }
 
-        // TODO: token, content, put
+        // TODO: token, content
         function updateRating(ratingId) {
-            return $http.post(apiBaseAddress + '/api/v1/ratings/' + ratingId)
+            return $http.put(apiBaseAddress + '/api/v1/ratings/' + ratingId)
             .then(function (result) {
                 return result.data;
             });
@@ -63,7 +63,7 @@
 
         // TODO: token, content
         function deleteRating(ratingId) {
-            return $http.post(apiBaseAddress + '/api/v1/ratings/' + ratingId)
+            return $http.delete(apiBaseAddress + '/api/v1/ratings/' + ratingId)
             .then(function (result) {
                 return result.data;
             });

@@ -5,9 +5,9 @@
         .module('NMDb')
         .service('reviewService', reviewService);
 
-   reviewService.$inject = ['$http']; 
+   reviewService.$inject = ['$http', 'loginService']; 
 
-   function reviewService($http) {
+   function reviewService($http, loginService) {
 
       var apiBaseAddress = 'https://nmdb.azurewebsites.net'; 
 
@@ -36,7 +36,7 @@
 
         function getUserReviews(movieId) {
 
-            // TODO: Use token
+            var headers = loginService.getTokenHeader();
             return $http.get(apiBaseAddress + '/api/v1/movies/' + movieId + '/reviews')
                  .then(function (result) {
                      return result.data;
@@ -44,7 +44,6 @@
         }
 
         function getReview(reviewId) {
-
             return $http.get(apiBaseAddress + '/api/v1/reviews/' + reviewId)
             .then(function (result) {
                 return result.data;
@@ -52,24 +51,32 @@
         }
 
        // TODO: token, content
-        function addReview() {
-            return $http.post(apiBaseAddress + '/api/v1/reviews/')
+        function addReview(review) {
+
+            var headers = loginService.getTokenHeader();
+
+            return $http.post(apiBaseAddress + '/api/v1/reviews', review, headers)
             .then(function (result) {
                 return result.data;
             });
+
         }
 
        // TODO: token, content
-        function updateReview(reviewId) {
-            return $http.post(apiBaseAddress + '/api/v1/reviews/' + reviewId)
+        function updateReview(review) {
+
+            var headers = loginService.getTokenHeader();
+
+            return $http.put(apiBaseAddress + '/api/v1/reviews/' + review.id, review, headers)
             .then(function (result) {
                 return result.data;
             });
+
         }
 
        // TODO: token, content
         function deleteReview(reviewId) {
-            return $http.post(apiBaseAddress + '/api/v1/reviews/' + reviewId)
+            return $http.delete(apiBaseAddress + '/api/v1/reviews/' + reviewId)
             .then(function (result) {
                 return result.data;
             });
