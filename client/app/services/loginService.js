@@ -12,13 +12,13 @@
         var apiBaseAddress = 'https://nmdb.azurewebsites.net';
 
         var service = {
-            oauth: oauth,
+            getToken: getToken,
             getTokenHeader: getTokenHeader
         };
 
         return service;
 
-        function oauth(username, password) {
+        function getToken(username, password) {
 
             var config = {
                 headers: {
@@ -41,9 +41,6 @@
 
             var body = pairs.join('&').replace(/%20/g, '+');
             console.log('body ' + body);
-
-            //application/json
-            // var data = 'grant_type=password&username=hml%40testing.com&password=!23Abc';
 
             return $http.post(apiBaseAddress + '/token', body, config)
                         .then(function (response) {
@@ -71,8 +68,6 @@
 
             return config;
         }
-
-
 
 
     }

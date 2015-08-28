@@ -5,9 +5,9 @@
         .module('NMDb')
         .service('genreService', genreService);
 
-    genreService.$inject = ['$http'];
+    genreService.$inject = ['$http', 'loginService'];
 
-    function genreService($http) {
+    function genreService($http, loginService) {
 
         var apiBaseAddress = 'https://nmdb.azurewebsites.net'; //TODO: configuration file
 
@@ -38,17 +38,21 @@
         //    };
         //});
 
-        //TODO: use token, error handling
-        function addGenre(genreName) {
-            return $http.post(apiBaseAddress + '/api/v1/genres/' + genreName)
+        function addGenre(genre) {
+
+            var headers = loginService.getTokenHeader();
+
+            return $http.post(apiBaseAddress + '/api/v1/genres/' + genre, headers)
                 .then(function (result) {
                     return result.data;
                 });
         }
 
-        // TODO: token
-        function deleteGenre(genreName) {
-            return $http.delete(apiBaseAddress + '/api/v1/genres/' + genreName)
+        function deleteGenre(genre) {
+
+            var headers = loginService.getTokenHeader();
+
+            return $http.delete(apiBaseAddress + '/api/v1/genres/' + genre.name, genre, headers)
                 .then(function (result) {
                     return result.data;
                 });

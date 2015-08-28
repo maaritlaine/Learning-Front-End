@@ -3,10 +3,36 @@
 body {
     background-color: $bg-color;
     color: $color;
-    padding: 16px;
 }
 
+header {
+    background-color:$bg-side-color;
+    padding: 10px;
+}
+
+a:link {
+    color:$text-link-color;
+}
+
+a:hover {
+    color:$text-hover-color;
+}
+
+.well-nmdb {
+    background-color:$bg-content-color;
+}
 .app-release-year-col {
     width: 150px;
     min-width: 150px;
 }
+
+.btn {
+    border-radius: 5px;
+    background-color: $btn-color;
+    
+}
+
+.btn-tab {
+       border-radius: 5px 5px 0 0;
+}
+

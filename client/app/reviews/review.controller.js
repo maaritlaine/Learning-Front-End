@@ -47,7 +47,7 @@
         };
         
         ctrl.edit =  function () {
-            $window.location.href = $window.location.href + 'editreview';
+            $window.location.href = $window.location.href + '/editreview';
         };
 
         

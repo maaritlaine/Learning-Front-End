@@ -37,7 +37,6 @@
                 });
     	}
 
-        // TODO: token, content
     	function addMovie(movie) {
 
     	    var headers = loginService.getTokenHeader();
@@ -57,7 +56,7 @@
             .then(function (result) {
                 return result.data;
             });
-    	}
+    	    }
 
         // TODO: token, content
     	function deleteMovie(movie) {

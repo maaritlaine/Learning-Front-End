@@ -11,15 +11,21 @@
 
         /* jshint validthis:true */
         var ctrl = this;
-        // TODO: poista kovakoodaus
-        ctrl.username = 'hml@testing.com';
-        ctrl.password = '!23Abc';
+
+        // TODO: poista kovakoodaus. Toimii normaalisti, kun tän ottaa pois.
+        //ctrl.user = {
+        //    username : 'hml@testing.com',
+        //    password : '!23Abc'
+        //}; 
         
-    
-        ctrl.signin = function () {
+        ctrl.isValid = function () {
+            return $cookieStore.get('SESSION_TOKEN');
+        };
+
+        ctrl.signIn = function () {
 
             //TODO: validate, hae arvot 
-            loginService.oauth(ctrl.username, ctrl.password)
+            loginService.getToken(ctrl.user.username, ctrl.user.password)
                      .then(function (response) {
                          ctrl.token = response.data;
                          $cookieStore.put('SESSION_TOKEN', response.data.access_token);
@@ -29,6 +35,11 @@
                          console.log('Login controller error.');
                      });
 
+        };
+
+        ctrl.signOut = function () {
+            // TODO: onko näin simppeli ok?
+            $cookieStore.put('SESSION_TOKEN', '');
         };
     }
 

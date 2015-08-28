@@ -5,9 +5,9 @@
         .module('NMDb')
         .service('ratingService', ratingService);
 
-    ratingService.$inject = ['$http'];
+    ratingService.$inject = ['$http', 'loginService'];
 
-    function ratingService($http) {
+    function ratingService($http, loginService) {
 
         var apiBaseAddress = 'https://nmdb.azurewebsites.net';
 
@@ -45,25 +45,31 @@
             });
         }
 
-        // TODO: token, content
-        function addRating() {
-            return $http.post(apiBaseAddress + '/api/v1/ratings/')
+        function addRating(rating) {
+
+            var headers = loginService.getTokenHeader();
+
+            return $http.post(apiBaseAddress + '/api/v1/ratings/', rating, headers)
             .then(function (result) {
                 return result.data;
             });
         }
 
-        // TODO: token, content
-        function updateRating(ratingId) {
-            return $http.put(apiBaseAddress + '/api/v1/ratings/' + ratingId)
+        function updateRating(rating) {
+
+            var headers = loginService.getTokenHeader();
+
+            return $http.put(apiBaseAddress + '/api/v1/ratings/' + rating.id, rating, headers)
             .then(function (result) {
                 return result.data;
             });
         }
 
-        // TODO: token, content
-        function deleteRating(ratingId) {
-            return $http.delete(apiBaseAddress + '/api/v1/ratings/' + ratingId)
+        function deleteRating(rating) {
+
+            var headers = loginService.getTokenHeader();
+
+            return $http.delete(apiBaseAddress + '/api/v1/ratings/' + rating.id, rating, headers)
             .then(function (result) {
                 return result.data;
             });

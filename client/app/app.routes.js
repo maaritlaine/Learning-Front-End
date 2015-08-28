@@ -72,6 +72,10 @@
             templateUrl: 'templates/ratings/ratings.html',
             controller: 'ratingCtrl as control'
         })
+        .when('/addgenre', {
+            templateUrl: 'templates/genres/genre-form.html',
+            controller: 'genresCtrl as control'
+        })
         ;
     }
 

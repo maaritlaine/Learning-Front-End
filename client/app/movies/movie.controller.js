@@ -21,6 +21,7 @@
         // storyline
         // genres
 
+
         activate(); 
 
         /* TODO: Calculate and return average rating. */

@@ -4,7 +4,7 @@
         e.g <div ng-controller="moviesCtrl">
 
     Here we do not need a ng-controller directive, because we have linked this template
-    together with the moviesCtrl in the app.route.js file. We can access the relevant 
+    together with the moviesCtrl in the app.route.js file. We can access the relevant
     controller through the alias defined in that route.
 
     moviesCtrl alias control has a variable called movies. Content of that variable is a responsibility
@@ -13,46 +13,74 @@
     ng-repeat repeats items in a list. You can sort, filter etc.:
     movie in control.movies | filter:searchText | orderBy:order
 -->
-
 <!-- TODO: Filter movies -->
 <!-- TODO: Sort movies -->
 <!-- TODO: Admin edit movie button -->
 <!-- TODO: Admin add movie button -->
 
-LOGIN
-<login></login>
-LOGIN
-
-<button class="btn btn-success" ng-click="control.addMovie()">Add movie!</button>
-
-<div class="col-md-10 col-md-offset-1">
-    <div ng-repeat="movie in control.movies">
-        <div class="well">
-            <div class="row">
-                <div class="col-md-2">
-                    <!-- TODO: No images or image information on node server. Code a workaround. -->
-                    <img ng-src="images\movie-posters\got.jpg" width="100" alt="{{movie.title}}" />
-                </div>
-                <div class="col-md-7">
-                    <div class="row">
-                        <div class="col-md-9"><h3>{{movie.title}}</h3></div>
-                        <div class="col-md-1 col-md-offset-1"><h4>{{movie.releaseYear}}</h4></div>
+<div class="row">
+    
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-1">
+        <div ng-repeat="movie in control.movies | orderBy: 'releaseYear'  | selectedGenresFilter: control.selectedGenres">
+            <!--| selectedGenres: control.selectedGenres : movie.genres-->
+            <div class="well well-nmdb">
+                <div class="row">
+                    <div class="col-md-2">
+                        <!-- TODO: No images or image information on node server. Code a workaround. -->
+                        <img ng-src="images\movie-posters\got.jpg" width="100" alt="{{movie.title}}" />
                     </div>
-                    <div class="row">
-                        <div class="col-md-11">{{movie.storyline}}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">{{movie.genres}}</div>
-                        <div class="col-md-4 col-md-offset-1">Average rating: {{movie.averageRating}}</div>
-                        <div class="col-md-2 col-md-offset-1"><a ng-href="#/movie/{{movie.id}}"><button class="btn btn-info">More</button></a></div>
-                        <!-- TODO: Show genres neatly and format average rating. -->
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6"><a ng-href="#/movie/{{movie.id}}"><h3>{{movie.title}}</h3></a></div>
+                            <div class="col-md-1 col-md-offset-1"><h4>{{movie.releaseYear}}</h4></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11">{{movie.storyline}}</div>
+                            <div class="col-md-8 col-md-offset-3 text-right">
+                                <a ng-href="#/movie/{{movie.id}}">Read more...</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">{{movie.genres}}</div>
+                            <div class="col-md-4 col-md-offset-1">Average rating: {{movie.averageRating | number:1}}</div>
+
+                            <!-- TODO: Show genres neatly and format average rating. -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-tab" ng-click="control.addMovie()">Add movie!</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-4" ng-controller="genresCtrl as genres">
+                <h6>Select genres:</h6>
+                <select multiple name="selectgenre" class="form-control" ng-model="control.selectedGenres">
+                    <option ng-selected="true" ng-repeat="genre in genres.genres" value="{{genre}}">{{genre}}</option>
+                </select>
+            </div>
+            <div class="col-md-8 col-md-offset-4"> selectedGenres: {{control.selectedGenres}}</div>
+        </div>
 
+        <div class="row">
+            <div class="col-md-12 col-md-offset-1" ng-controller="genresCtrl as genres">
+                <tristatecheckbox checkboxes="genres.genres" class="select-all-cb"></tristatecheckbox>Select all
+                <div ng-repeat="genre in genres.genres">
+                    <input type="checkbox" ng-model="genre.isSelected"> {{genre}}
+                </div>
+            </div>  
+            <div class="col-md-12 col-md-offset-1"> selectedGenres: {{control.selectedGenres}}</div>
+        </div>
+
+        </div>
+</div>
 <!--
     The text with curly braces are called expressions.
 -->

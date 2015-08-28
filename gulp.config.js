@@ -83,13 +83,13 @@ module.exports = function () {
                 './build/css/lib*.css',
                 './build/css/app*.css',
                 './build/js/lib*.js',
-                './build/js/app*.js' 
+                './build/js/app*.js'
             ],
             dest: './build'
         },
 
         // Location of the index.html where then injections are made, i.e. the application page.
-        index:  './client/index.html',
+        index: './client/index.html',
 
         // FONTS
         fonts: {
@@ -108,11 +108,11 @@ module.exports = function () {
 
         // IMAGES = location of images used in UI.
         images: {
-        src: './client/content/**/*.jpg',
-        dest: './build/images'
+            src: './client/content/**/*.jpg',
+            dest: './build/images'
         }
 
-   }
+    };
 
    return config;
 
