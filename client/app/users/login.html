@@ -1,0 +1,21 @@
+﻿<div ng-controller="loginCtrl as login">
+    <!--
+        ng-if
+        - when true the dom-tree element is visible
+        - when false the element is not rendered
+    -->
+    <form ng-if="!login.isValid()" class="form-group-sm" name="loginForm" ng-submit="login.signIn()" novalidate>
+        <div>
+            <label>Username:</label>
+            <input name="username" class="input-sm" type="text" placeholder="hml@testing.com" ng-model="login.user.username" required />
+            <label>Password:</label>
+            <input name="password" class="input-sm" type="password" placeholder="!23Abc" ng-model="login.user.password" required />
+            <input class="btn btn-sm" type="submit" value="Sign in" />
+            <input class="btn btn-sm" value="Register" ng-click="login.register()" />
+        </div>
+    </form>
+
+    <form ng-if="login.isValid()" class="form-group-sm" name="logoutForm" ng-submit="login.signOut()" novalidate>
+        <input class="btn btn-sm" class="input-group-sm" type="submit" value="Sign out" />
+    </form>
+</div>

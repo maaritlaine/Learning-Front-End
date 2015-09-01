@@ -1,0 +1,52 @@
+﻿
+<div class="row">
+    Route: users/new
+    Template: user-form.html
+    TODO:
+    - Validate that password =  password-again
+    - Add functionalty  
+</div>
+
+<div class="well well-nmdb">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+            <form name="addUserForm">
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <label class="label label-nmdb" for="email">Email: </label>
+                    </div>
+                    <div class="col-md-5 col-md-offset-1">
+                        <input class="input-sm" name="email" type="email" ng-model="control.user.email" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <label class="label label-nmdb" for="password">Password: </label>
+                    </div>
+                    <div class="col-md-5 col-md-offset-1">
+                        <input class="input-sm" name=" password" type="password" ng-model="control.user.password" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <label class="label label-nmdb" for="password">Re-enter password: </label>
+                    </div>
+                        <div class="col-md-5 col-md-offset-1">
+                            <input class="input-sm" name="passwordcheck" type="password" ng-model="control.passwordcheck" required />
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <checkbox class="checkbox" name="acceptterms"/>
+                            I accept everything. I'm a zen master.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-7">
+                        <button class="btn btn-sm text-right" ng-click="control.register()">Register account</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
