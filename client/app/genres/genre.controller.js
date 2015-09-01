@@ -11,7 +11,7 @@
         /* jshint validthis:true */
         var ctrl = this;
         ctrl.isSelected = true;
-
+            
         ctrl.submit = function () {
 
             console.log('Submit genre. ' + ctrl.genre.name);

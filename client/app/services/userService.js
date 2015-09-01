@@ -5,9 +5,9 @@
         .module('NMDb')
         .service('userService', userService);
 
-    userService.$inject = ['$http'];
+    userService.$inject = ['$http', 'loginService'];
 
-    function userService($http) {
+    function userService($http, loginService) {
 
         var apiBaseAddress = 'https://nmdb.azurewebsites.net';
 
@@ -17,13 +17,15 @@
 
         return service;
 
-        // TODO: add parameters 
-        function addUser(userName, eMail, passWord) {
+        function addUser(user) {
 
-            // TODO: is it better to pass individual items or an user object. 
-            // TODO: pass object?
+            var config = {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            };
 
-            return $http.post(apiBaseAddress + '/api/account/register')
+            return $http.post(apiBaseAddress + '/api/account/register', user, config.headers)
                  .then(function (result) {
                      return result.data;
                  });

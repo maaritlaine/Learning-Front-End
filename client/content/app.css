@@ -15,6 +15,9 @@ a:hover {
 .well-nmdb {
   background-color: #ebf5d8; }
 
+.label-nmdb {
+  color: #333; }
+
 .app-release-year-col {
   width: 150px;
   min-width: 150px; }
